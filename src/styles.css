@@ -1,0 +1,25 @@
+@import url('http://fonts.cdnfonts.com/css/common-pixel');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #142d4c;
+    font-family: 'Common Pixel', sans-serif;
+}
+
+.first-color {
+    background: #ececec;
+}
+
+.second-color {
+    background: #9fd3c7;
+}
+
+.third-color {
+    background: #385170;
+}
+
+.fourth-color {
+    background: #142d4c;
+}

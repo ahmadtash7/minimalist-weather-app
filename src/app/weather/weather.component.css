@@ -6,19 +6,45 @@
     border-radius: 4%;
 }
 
+.city {
+    /* border: 1px white solid; */
+    text-align: center;
+    font-size: 150%;
+    padding: 5%;
+}
+
+.info {
+    /* border: 1px white solid; */
+    height: 70%;
+    margin-top: 5%;
+}
+
 .left {
     float: left;
-    width: 40%;
-    height: 75%;
-    background-color: aliceblue;
-    margin: 40px 12.5px;
-    font-size: 48px;
+    width: 48%;
+    height: 100%;
+    font-size: 36px;
+    /* border: 1px white solid; */
 }
 
 .right {
+    /* border: 1px white solid; */
     float: right;
-    width: 40%;
-    height: 75%;
-    background-color: aliceblue;
-    margin: 40px 12.5px;
+    width: 48%;
+    height: 100%;
+    font-size: 36px;
+    text-align: center;
+}
+
+.temp {
+    text-align: center;
+    /* border: 1px white solid; */
+    height: 20%;
+}
+
+.icon {
+    text-align: center;
+    /* border: 1px white solid; */
+    height: 80%;
+    padding: 17%;
 }

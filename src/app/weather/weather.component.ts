@@ -1,4 +1,6 @@
+import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from './services/weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -7,20 +9,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  public WeatherData: any;
-  constructor() { }
+  public city: any;
+  public data: any;
+  public cloudy: boolean = true;
+  public timeStamp: number = 0;
+  public timeStampIndex: number = 0;
+  constructor(
+    private weatherService: WeatherService,
+  ) { }
 
   ngOnInit(): void {
-    this.getWeatherData();
-    console.log(this.WeatherData);
-  }
-
-  getWeatherData() {
-    let data = JSON.parse('{"temp":300.84,"feels_like":304.22,"temp_min":300.22,"temp_max":300.84,"pressure":1005,"sea_level":1005,"grnd_level":947,"humidity":78,"temp_kf":0.62}');
-    this.setWeatherData(data);
-  }
-
-  setWeatherData(data: any) {
-    this.WeatherData = data;
+    if ('city' in localStorage) {
+      this.weatherService.getWeather(localStorage.getItem('city'))
+        .subscribe({
+          next: (response) => {
+            this.timeStamp = Date.now();
+            for (let i = 0; i < response.list.length; i++) {
+              if (this.timeStamp < response.list[i].dt) {
+                this.timeStampIndex = i;
+                break;
+              }
+            }
+            this.city = response.city;
+            this.data = response.list[this.timeStampIndex];
+          }
+          ,
+          error: () => {
+            alert('ENTERED CITY MAY BE SPELLED INCORRECTLY OR ITS DATA IS NOT AVAILABLE');
+            localStorage.removeItem('city');
+            this.weatherService.getWeather('islamabad')
+              .subscribe({
+                next: (response) => {
+                  this.data = response;
+                }
+              });
+          }
+        });
+    } else {
+      this.weatherService.getWeather('islamabad')
+        .subscribe({
+          next: (response) => {
+            this.timeStamp = Date.now();
+            for (let i = 0; i < response.list.length; i++) {
+              if (this.timeStamp < response.list[i].dt) {
+                this.timeStampIndex = i;
+                break;
+              }
+            }
+            this.city = response.city;
+            this.data = response.list[this.timeStampIndex];
+            // this.cloudy = if (this.data.main.clouds > 25) { return true; } else { false };
+          }
+        });
+    }
   }
 }

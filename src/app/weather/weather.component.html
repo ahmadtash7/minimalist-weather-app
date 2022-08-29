@@ -1,6 +1,22 @@
 <div class="weather-card">
-    <div class="left">{{(WeatherData.temp - 273.15).toFixed(1)}}°C</div>
-    <div class="right">
-        LONGITUDE <br> LATITUDE <br> WIND
+    <div class="city">
+        {{city.name}}
+    </div>
+    <div class="info">
+        <div class="left">
+            <div class="temp">
+                <i class="fas fa-temperature-high"></i> {{data.main.temp.toFixed(1)}}°C
+            </div>
+            <div *ngIf="data.main.clouds === 7" class="icon">
+                <i class="fa fa-sun fa-spin fa-3x"></i>
+            </div>
+        </div>
+        <div class="right">
+            <div>L: {{data.main.temp_min}}°C</div>
+            <br>
+            <div>H: {{data.main.temp_max}}°C</div>
+            <br>
+            <div><i class="fa fa-tint"></i> {{data.main.humidity}}%</div>
+        </div>
     </div>
 </div>

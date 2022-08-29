@@ -1,0 +1,50 @@
+.weather-card {
+    width: 30%;
+    height: 50%;
+    margin: 50px auto 0px auto;
+    background-color: hsl(213, 33%, 33%);
+    border-radius: 4%;
+}
+
+.city {
+    /* border: 1px white solid; */
+    text-align: center;
+    font-size: 150%;
+    padding: 5%;
+}
+
+.info {
+    /* border: 1px white solid; */
+    height: 70%;
+    margin-top: 5%;
+}
+
+.left {
+    float: left;
+    width: 48%;
+    height: 100%;
+    font-size: 36px;
+    /* border: 1px white solid; */
+}
+
+.right {
+    /* border: 1px white solid; */
+    float: right;
+    width: 48%;
+    height: 100%;
+    font-size: 36px;
+    text-align: center;
+}
+
+.temp {
+    text-align: center;
+    /* border: 1px white solid; */
+    height: 20%;
+}
+
+.icon {
+    text-align: center;
+    /* border: 1px white solid; */
+    height: 80%;
+    padding: 17%;
+}

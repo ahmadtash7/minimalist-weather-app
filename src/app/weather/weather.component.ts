@@ -14,6 +14,8 @@ export class WeatherComponent implements OnInit {
   public cloudy: boolean = true;
   public timeStamp: number = 0;
   public timeStampIndex: number = 0;
+  public sunset?: Date;
+  public sunrise?: Date;
   public conditions: string = '';
   constructor(
     private weatherService: WeatherService,
@@ -34,15 +36,29 @@ export class WeatherComponent implements OnInit {
             this.city = response.city;
             this.data = response.list[this.timeStampIndex];
             this.conditions = response.list[this.timeStampIndex].weather[this.timeStampIndex].main;
+            this.sunrise = new Date(this.city.sunrise * 1000);
+            this.sunset = new Date(this.city.sunset * 1000);
           }
           ,
           error: () => {
             alert('ENTERED CITY MAY BE SPELLED INCORRECTLY OR ITS DATA IS NOT AVAILABLE');
             localStorage.removeItem('city');
+            localStorage.setItem('city', 'islamabad')
             this.weatherService.getWeather('islamabad')
               .subscribe({
                 next: (response) => {
-                  this.data = response;
+                  this.timeStamp = Date.now();
+                  for (let i = 0; i < response.list.length; i++) {
+                    if (this.timeStamp < response.list[i].dt) {
+                      this.timeStampIndex = i;
+                      break;
+                    }
+                  }
+                  this.city = response.city;
+                  this.data = response.list[this.timeStampIndex];
+                  this.conditions = response.list[this.timeStampIndex].weather[this.timeStampIndex].main;
+                  this.sunrise = new Date(this.city.sunrise * 1000);
+                  this.sunset = new Date(this.city.sunset * 1000);
                 }
               });
           }
@@ -61,6 +77,8 @@ export class WeatherComponent implements OnInit {
             this.city = response.city;
             this.data = response.list[this.timeStampIndex];
             this.conditions = response.list[this.timeStampIndex].weather[this.timeStampIndex].main;
+            this.sunrise = new Date(this.city.sunrise * 1000);
+            this.sunset = new Date(this.city.sunset * 1000);
           }
         });
     }

@@ -1,7 +1,26 @@
+.card-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+.sun-card {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
 .weather-card {
     width: 30%;
     height: 50%;
-    margin: 50px auto 0px auto;
+    /* margin: 50px 150px 0px auto; */
     box-shadow: 5px 5px 5px rgba(75, 72, 72, 0.342);
     background-color: hsl(213, 33%, 33%);
     border-radius: 4%;
@@ -30,11 +49,21 @@
 
 .right {
     /* border: 1px white solid; */
-    float: right;
+    /* float: right; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 48%;
     height: 100%;
     font-size: 36px;
-    text-align: center;
+}
+
+.fa-solid.fa-arrow-down-long {
+    color: rgb(47, 208, 47);
+}
+
+.fa-solid.fa-arrow-up-long {
+    color: rgb(214, 15, 15);
 }
 
 .fa.fa-tint {
@@ -72,10 +101,36 @@
         margin-left: 15%;
     }
     to {
-        margin-left: 75%;
+        margin-left: 55%;
     }
 }
 
 .rain {
     color: hsl(221, 39%, 51%)
+}
+
+.info-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    height: 50%;
+    /* border: 1px solid white; */
+    /* margin: 50px 50px 0px 0px; */
+}
+
+.info-left {
+    width: 50%;
+    height: 100%;
+    border: 0 1px 0 0 white solid;
+}
+
+.info-right {
+    width: 50%;
+    height: 100%;
+    border: 0 1px 0 0 white solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

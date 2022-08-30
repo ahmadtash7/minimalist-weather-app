@@ -1,11 +1,11 @@
 <div class="pane">
     <div class="heading-div">
-        <!-- <a href="/src/app/app.component.html"> -->
         <h1>HOW'S THE WEATHER?</h1>
-        <!-- </a> -->
     </div>
-    <div class="search-box">
-        <input type="text" placeholder="city" class="search-txt" #search>
-        <button (click)="changeCity(search.value)"><i class="fas fa-search"></i></button>
+    <div class="search-box-div">
+        <div class="search-box">
+            <input type="text" placeholder="your city" class="search-txt" #search>
+            <button (click)="changeCity(search.value)" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
     </div>
 </div>

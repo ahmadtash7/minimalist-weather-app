@@ -1,34 +1,91 @@
-<div class="weather-card">
-    <div class="city">
-        {{city.name}}
+<div class="card-div">
+
+    <div class="sun-card">
+        ngIf
+        <div>
+            {{sunrise}}
+        </div>
+        <div>
+            {{sunset}}
+        </div>
     </div>
-    <div class="info">
-        <div class="left">
-            <div class="temp">
-                <i class="fas fa-temperature-high fa-beat"></i> {{data.main.temp.toFixed(1)}}°C
+
+    <div class="weather-card">
+        <div class="city">
+            {{city.name}}
+        </div>
+        <div class="info">
+            <div class="left">
+                <div class="temp">
+                    <i class="fas fa-temperature-high fa-beat"></i> {{data.main.temp.toFixed(1)}}°C
+                </div>
+                <div *ngIf="conditions === 'Clear'" class="icon sun">
+                    <i class="fa fa-sun fa-spin fa-2x"></i>
+                </div>
+                <div *ngIf="conditions === 'Clouds'" class="icon cloud">
+                    <i class="fa-solid fa-cloud fa-2x"></i>
+                </div>
+                <div *ngIf="conditions === 'Rain'" class="icon rain">
+                    <i class="fa-solid fa-cloud-showers-heavy fa-2x fa-bounce"></i>
+                </div>
+                <div *ngIf="conditions === 'Snow'" class="icon">
+                    <i class="fa fa-sun fa-spin fa-3x"></i>
+                </div>
+                <div *ngIf="conditions === 'Extreme'" class="icon">
+                    <i class="fa fa-sun fa-spin fa-3x"></i>
+                </div>
             </div>
-            <div *ngIf="conditions === 'Clear'" class="icon sun">
-                <i class="fa fa-sun fa-spin fa-2x"></i>
-            </div>
-            <div *ngIf="conditions === 'Clouds'" class="icon cloud">
-                <i class="fa-solid fa-cloud fa-2x"></i>
-            </div>
-            <div *ngIf="conditions === 'Rain'" class="icon rain">
-                <i class="fa-solid fa-cloud-showers-heavy fa-2x fa-bounce"></i>
-            </div>
-            <div *ngIf="conditions === 'Snow'" class="icon">
-                <i class="fa fa-sun fa-spin fa-3x"></i>
-            </div>
-            <div *ngIf="conditions === 'Extreme'" class="icon">
-                <i class="fa fa-sun fa-spin fa-3x"></i>
+            <div class="right">
+                <div><i class="fa-solid fa-arrow-down-long"></i> {{data.main.temp_min}}°C</div>
+                <br>
+                <div><i class="fa-solid fa-arrow-up-long"></i> {{data.main.temp_max}}°C</div>
+                <br>
+                <div><i class="fa fa-tint"></i> {{data.main.humidity}}%</div>
             </div>
         </div>
-        <div class="right">
-            <div>L: {{data.main.temp_min}}°C</div>
-            <br>
-            <div>H: {{data.main.temp_max}}°C</div>
-            <br>
-            <div><i class="fa fa-tint"></i> {{data.main.humidity}}%</div>
+    </div>
+
+    <div class="info-card">
+
+        <div class="info-left">
+            <div>
+                country
+            </div>
+            <div>
+                wind
+            </div>
+            <div>
+                direction
+            </div>
+            <div>
+                population
+            </div>
+            <div>
+                LATITUDE
+            </div>
+            <div>
+                longitude
+            </div>
+        </div>
+        <div class="info-right">
+            <div>
+                {{city.country}}
+                <i class="fa-solid fa-map-pin"></i> </div>
+            <div>
+                {{data.wind.speed}}m/s
+                <i class="fa-solid fa-wind"></i> </div>
+            <div>
+                {{data.wind.deg}}°
+                <i class="fa-solid fa-compass"></i> </div>
+            <div>
+                {{city.population}}
+                <i class="fa-solid fa-people-group"></i> </div>
+            <div>
+                {{city.coord.lat}}
+                <i class="fa-solid fa-globe"></i> </div>
+            <div>
+                {{city.coord.lon}}
+                <i class="fa-solid fa-globe"></i> </div>
         </div>
     </div>
 </div>

@@ -14,6 +14,7 @@ export class WeatherComponent implements OnInit {
   public cloudy: boolean = true;
   public timeStamp: number = 0;
   public timeStampIndex: number = 0;
+  public conditions: string = '';
   constructor(
     private weatherService: WeatherService,
   ) { }
@@ -32,6 +33,7 @@ export class WeatherComponent implements OnInit {
             }
             this.city = response.city;
             this.data = response.list[this.timeStampIndex];
+            this.conditions = response.list[this.timeStampIndex].weather[this.timeStampIndex].main;
           }
           ,
           error: () => {
@@ -58,7 +60,7 @@ export class WeatherComponent implements OnInit {
             }
             this.city = response.city;
             this.data = response.list[this.timeStampIndex];
-            // this.cloudy = if (this.data.main.clouds > 25) { return true; } else { false };
+            this.conditions = response.list[this.timeStampIndex].weather[this.timeStampIndex].main;
           }
         });
     }

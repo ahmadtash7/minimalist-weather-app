@@ -2,6 +2,7 @@
     width: 30%;
     height: 50%;
     margin: 50px auto 0px auto;
+    box-shadow: 5px 5px 5px rgba(75, 72, 72, 0.342);
     background-color: hsl(213, 33%, 33%);
     border-radius: 4%;
 }
@@ -9,7 +10,7 @@
 .city {
     /* border: 1px white solid; */
     text-align: center;
-    font-size: 150%;
+    font-size: 250%;
     padding: 5%;
 }
 
@@ -36,15 +37,45 @@
     text-align: center;
 }
 
+.fa.fa-tint {
+    color: hsl(213, 33%, 66%);
+}
+
 .temp {
     text-align: center;
     /* border: 1px white solid; */
     height: 20%;
 }
 
+.fas.fa-temperature-high {
+    color: lightcoral;
+}
+
 .icon {
     text-align: center;
     /* border: 1px white solid; */
     height: 80%;
-    padding: 17%;
+    margin-top: 25%;
+}
+
+.sun {
+    color: rgb(242, 113, 7);
+}
+
+.cloud {
+    text-align: left;
+    animation: 2.5s linear infinite alternate cloud;
+}
+
+@keyframes cloud {
+    from {
+        margin-left: 15%;
+    }
+    to {
+        margin-left: 75%;
+    }
+}
+
+.rain {
+    color: hsl(221, 39%, 51%)
 }

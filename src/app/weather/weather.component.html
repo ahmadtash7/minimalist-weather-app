@@ -1,12 +1,35 @@
 <div class="card-div">
 
     <div class="sun-card">
-        ngIf
-        <div>
-            {{sunrise}}
+        <div class="sun-card-row">
+            <div class="sun-card-left">
+                <i class="fa-solid fa-mountain-sun b fa-7x"></i>
+            </div>
+            <div class="sun-card-right">
+                <h2>sunrise</h2>
+                <div>
+                    Date: {{sunrise?.getDate()}}/{{sunrise?.getMonth()}}/{{sunrise?.getFullYear()}}
+                </div>
+                <br>
+                <div>
+                    Time: {{sunrise?.getHours()}}:{{sunrise?.getMinutes()}} AM
+                </div>
+            </div>
         </div>
-        <div>
-            {{sunset}}
+        <div class="sun-card-row">
+            <div class="sun-card-right">
+                <h2>sunset</h2>
+                <div>
+                    Date: {{sunset?.getDate()}}/{{sunset?.getMonth()}}/{{sunset?.getFullYear()}}
+                </div>
+                <br>
+                <div>
+                    Time: {{sunset?.getHours()}}:{{sunset?.getMinutes()}} PM
+                </div>
+            </div>
+            <div class="sun-card-left">
+                <i class="fa-solid fa-moon fa-7x"></i>
+            </div>
         </div>
     </div>
 
@@ -17,9 +40,9 @@
         <div class="info">
             <div class="left">
                 <div class="temp">
-                    <i class="fas fa-temperature-high fa-beat"></i> {{data.main.temp.toFixed(1)}}°C
+                    <i class="fas fa-temperature-high fa-beat" style="--fa-animation-duration: 0.5s;"></i> {{data.main.temp.toFixed(1)}}°C
                 </div>
-                <div *ngIf="conditions === 'Clear'" class="icon sun">
+                <div *ngIf="conditions === 'Clear'" class="icon">
                     <i class="fa fa-sun fa-spin fa-2x"></i>
                 </div>
                 <div *ngIf="conditions === 'Clouds'" class="icon cloud">
@@ -36,9 +59,9 @@
                 </div>
             </div>
             <div class="right">
-                <div><i class="fa-solid fa-arrow-down-long"></i> {{data.main.temp_min}}°C</div>
+                <div><i class="fa-solid fa-arrow-down-long fa-shake"></i> {{data.main.temp_min}}°C</div>
                 <br>
-                <div><i class="fa-solid fa-arrow-up-long"></i> {{data.main.temp_max}}°C</div>
+                <div><i class="fa-solid fa-arrow-up-long fa-shake"></i> {{data.main.temp_max}}°C</div>
                 <br>
                 <div><i class="fa fa-tint"></i> {{data.main.humidity}}%</div>
             </div>
@@ -47,45 +70,53 @@
 
     <div class="info-card">
 
-        <div class="info-left">
-            <div>
-                country
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-map-pin"></i> country
             </div>
-            <div>
-                wind
-            </div>
-            <div>
-                direction
-            </div>
-            <div>
-                population
-            </div>
-            <div>
-                LATITUDE
-            </div>
-            <div>
-                longitude
+            <div class="info-right">
+                {{city.country}}
             </div>
         </div>
-        <div class="info-right">
-            <div>
-                {{city.country}}
-                <i class="fa-solid fa-map-pin"></i> </div>
-            <div>
-                {{data.wind.speed}}m/s
-                <i class="fa-solid fa-wind"></i> </div>
-            <div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-wind"></i> wind
+            </div>
+            <div class="info-right">
+                {{data.wind.speed.toFixed(1)}} m/s
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-compass"></i> direction
+            </div>
+            <div class="info-right">
                 {{data.wind.deg}}°
-                <i class="fa-solid fa-compass"></i> </div>
-            <div>
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-people-group"></i> pop.
+            </div>
+            <div class="info-right">
                 {{city.population}}
-                <i class="fa-solid fa-people-group"></i> </div>
-            <div>
-                {{city.coord.lat}}
-                <i class="fa-solid fa-globe"></i> </div>
-            <div>
-                {{city.coord.lon}}
-                <i class="fa-solid fa-globe"></i> </div>
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-globe"></i> LAT
+            </div>
+            <div class="info-right">
+                {{city.coord.lat.toFixed(2)}}
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-globe"></i> lon
+            </div>
+            <div class="info-right">
+                {{city.coord.lon.toFixed(2)}}
+            </div>
         </div>
     </div>
 </div>

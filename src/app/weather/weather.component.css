@@ -14,7 +14,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid white;
+}
+
+.sun-card-row {
+    width: 100%;
+    display: flex;
+    height: 50%;
+    font-size: 16px;
+}
+
+h2 {
+    text-shadow: 4px 4px 4px black;
+}
+
+.sun-card-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun-card-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-solid.fa-mountain-sun.b {
+    color: rgb(247, 196, 11);
+}
+
+.fa-moon {
+    color: rgb(229, 200, 163);
 }
 
 .weather-card {
@@ -28,6 +64,7 @@
 
 .city {
     /* border: 1px white solid; */
+    text-shadow: 4px 4px 4px black;
     text-align: center;
     font-size: 250%;
     padding: 5%;
@@ -87,7 +124,7 @@
     margin-top: 25%;
 }
 
-.sun {
+.fa-sun {
     color: rgb(242, 113, 7);
 }
 
@@ -111,26 +148,53 @@
 
 .info-card {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     width: 20%;
     height: 50%;
+    font-size: 24px;
     /* border: 1px solid white; */
     /* margin: 50px 50px 0px 0px; */
 }
 
+.info-card-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .info-left {
-    width: 50%;
+    width: 70%;
     height: 100%;
-    border: 0 1px 0 0 white solid;
 }
 
 .info-right {
-    width: 50%;
+    width: 40%;
     height: 100%;
-    border: 0 1px 0 0 white solid;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.fa-map-pin {
+    color: rgb(188, 57, 57);
+}
+
+.fa-wind {
+    color: lightskyblue;
+}
+
+.fa-compass {
+    color: rgb(150, 152, 136);
+}
+
+.fa-people-group {
+    color: rgb(104, 176, 178);
+}
+
+.fa-globe {
+    color: green;
 }

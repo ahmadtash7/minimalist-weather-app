@@ -11,7 +11,6 @@ export class WeatherComponent implements OnInit {
 
   public city: any;
   public data: any;
-  public cloudy: boolean = true;
   public timeStamp: number = 0;
   public timeStampIndex: number = 0;
   public sunset?: Date;
@@ -77,6 +76,7 @@ export class WeatherComponent implements OnInit {
             this.city = response.city;
             this.data = response.list[this.timeStampIndex];
             this.conditions = response.list[this.timeStampIndex].weather[this.timeStampIndex].main;
+
             this.sunrise = new Date(this.city.sunrise * 1000);
             this.sunset = new Date(this.city.sunset * 1000);
           }

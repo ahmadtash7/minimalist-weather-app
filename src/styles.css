@@ -4,8 +4,24 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100%;
     background-color: #142d4c;
     font-family: 'Common Pixel', sans-serif;
+    text-transform: uppercase;
+    color: #ececec;
+}
+
+a {
+    text-decoration: none;
+    color: #ececec;
+}
+
+@media all and (max-width: 768px) {
+    html,
+    body {
+        height: auto;
+        width: auto;
+    }
 }
 
 .first-color {

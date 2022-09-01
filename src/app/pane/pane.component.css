@@ -1,7 +1,71 @@
-div {
+.pane {
     background-color: #385170;
-    color: whitesmoke;
+    color: #ececec;
     text-align: center;
-    padding: 10px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    display: flex;
+}
+
+.heading-div {
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 100%;
     font-size: 150%;
+}
+
+.search-box-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-color: #142d4c;
+    /* border: 1px solid white; */
+    height: 100%;
+    width: 15%;
+}
+
+.search-box {
+    display: flex;
+    background-color: #385170;
+    /* border: 1px solid white; */
+    border-radius: 50px;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box:hover>.search-txt {
+    width: 170px;
+}
+
+.search-btn {
+    color: #ececec;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    /* justify-content: center; */
+    /* font-size: 24px; */
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    font-family: 'Common Pixel', sans-serif;
+    text-transform: uppercase;
+    outline: none;
+    float: left;
+    align-items: center;
+    color: #ececec;
+    padding: 0;
+    font-size: 14px;
+    transition: 0.4s;
+    width: 0;
 }

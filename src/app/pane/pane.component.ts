@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pane',
   templateUrl: './pane.component.html',
   styleUrls: ['./pane.component.css']
 })
-export class PaneComponent implements OnInit {
+export class PaneComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  changeCity(city: any) {
+    localStorage.setItem('city', city);
+    window.location.reload();
   }
-
 }

@@ -1,6 +1,122 @@
-<div class="weather-card">
-    <div class="left">{{(data.list[0].main.temp).toFixed(1)}}°C</div>
-    <div class="right">
-        LONGITUDE <br> LATITUDE <br> WIND
+<div class="card-div">
+
+    <div class="sun-card">
+        <div class="sun-card-row">
+            <div class="sun-card-left">
+                <i class="fa-solid fa-mountain-sun b fa-7x"></i>
+            </div>
+            <div class="sun-card-right">
+                <h2>sunrise</h2>
+                <div>
+                    Date: {{sunrise?.getDate()}}/{{sunrise?.getMonth()}}/{{sunrise?.getFullYear()}}
+                </div>
+                <br>
+                <div>
+                    Time: {{sunrise?.getHours()}}:{{sunrise?.getMinutes()}} AM
+                </div>
+            </div>
+        </div>
+        <div class="sun-card-row">
+            <div class="sun-card-right">
+                <h2>sunset</h2>
+                <div>
+                    Date: {{sunset?.getDate()}}/{{sunset?.getMonth()}}/{{sunset?.getFullYear()}}
+                </div>
+                <br>
+                <div>
+                    Time: {{sunset?.getHours()}}:{{sunset?.getMinutes()}} PM
+                </div>
+            </div>
+            <div class="sun-card-left">
+                <i class="fa-solid fa-moon fa-7x"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather-card">
+        <div class="city">
+            {{city.name}}
+        </div>
+        <div class="info">
+            <div class="left">
+                <div class="temp">
+                    <i class="fas fa-temperature-high fa-beat" style="--fa-animation-duration: 0.5s;"></i> {{data.main.temp.toFixed(1)}}°C
+                </div>
+                <div *ngIf="conditions === 'Clear'" class="icon">
+                    <i class="fa fa-sun fa-spin fa-2x"></i>
+                </div>
+                <div *ngIf="conditions === 'Clouds'" class="icon cloud">
+                    <i class="fa-solid fa-cloud fa-2x"></i>
+                </div>
+                <div *ngIf="conditions === 'Rain'" class="icon rain">
+                    <i class="fa-solid fa-cloud-showers-heavy fa-2x fa-bounce"></i>
+                </div>
+                <div *ngIf="conditions === 'Snow'" class="icon">
+                    <i class="fa fa-sun fa-spin fa-3x"></i>
+                </div>
+                <div *ngIf="conditions === 'Extreme'" class="icon">
+                    <i class="fa fa-sun fa-spin fa-3x"></i>
+                </div>
+            </div>
+            <div class="right">
+                <div><i class="fa-solid fa-arrow-down-long fa-shake"></i> {{data.main.temp_min}}°C</div>
+                <br>
+                <div><i class="fa-solid fa-arrow-up-long fa-shake"></i> {{data.main.temp_max}}°C</div>
+                <br>
+                <div><i class="fa fa-tint"></i> {{data.main.humidity}}%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-map-pin"></i> country
+            </div>
+            <div class="info-right">
+                {{city.country}}
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-wind"></i> wind
+            </div>
+            <div class="info-right">
+                {{data.wind.speed.toFixed(1)}} m/s
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-compass"></i> direction
+            </div>
+            <div class="info-right">
+                {{data.wind.deg}}°
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-people-group"></i> pop.
+            </div>
+            <div class="info-right">
+                {{city.population}}
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-globe"></i> LAT
+            </div>
+            <div class="info-right">
+                {{city.coord.lat.toFixed(2)}}
+            </div>
+        </div>
+        <div class="info-card-row">
+            <div class="info-left">
+                <i class="fa-solid fa-globe"></i> lon
+            </div>
+            <div class="info-right">
+                {{city.coord.lon.toFixed(2)}}
+            </div>
+        </div>
     </div>
 </div>

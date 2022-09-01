@@ -1,24 +1,200 @@
+.card-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+.sun-card {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun-card-row {
+    width: 100%;
+    display: flex;
+    height: 50%;
+    font-size: 16px;
+}
+
+h2 {
+    text-shadow: 4px 4px 4px black;
+}
+
+.sun-card-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun-card-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-solid.fa-mountain-sun.b {
+    color: rgb(247, 196, 11);
+}
+
+.fa-moon {
+    color: rgb(229, 200, 163);
+}
+
 .weather-card {
     width: 30%;
     height: 50%;
-    margin: 50px auto 0px auto;
+    /* margin: 50px 150px 0px auto; */
+    box-shadow: 5px 5px 5px rgba(75, 72, 72, 0.342);
     background-color: hsl(213, 33%, 33%);
     border-radius: 4%;
 }
 
+.city {
+    /* border: 1px white solid; */
+    text-shadow: 4px 4px 4px black;
+    text-align: center;
+    font-size: 250%;
+    padding: 5%;
+}
+
+.info {
+    /* border: 1px white solid; */
+    height: 70%;
+    margin-top: 5%;
+}
+
 .left {
     float: left;
-    width: 40%;
-    height: 75%;
-    background-color: aliceblue;
-    margin: 40px 12.5px;
-    font-size: 48px;
+    width: 48%;
+    height: 100%;
+    font-size: 36px;
+    /* border: 1px white solid; */
 }
 
 .right {
-    float: right;
+    /* border: 1px white solid; */
+    /* float: right; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 48%;
+    height: 100%;
+    font-size: 36px;
+}
+
+.fa-solid.fa-arrow-down-long {
+    color: rgb(47, 208, 47);
+}
+
+.fa-solid.fa-arrow-up-long {
+    color: rgb(214, 15, 15);
+}
+
+.fa.fa-tint {
+    color: hsl(213, 33%, 66%);
+}
+
+.temp {
+    text-align: center;
+    /* border: 1px white solid; */
+    height: 20%;
+}
+
+.fas.fa-temperature-high {
+    color: lightcoral;
+}
+
+.icon {
+    text-align: center;
+    /* border: 1px white solid; */
+    height: 80%;
+    margin-top: 25%;
+}
+
+.fa-sun {
+    color: rgb(242, 113, 7);
+}
+
+.cloud {
+    text-align: left;
+    animation: 2.5s linear infinite alternate cloud;
+}
+
+@keyframes cloud {
+    from {
+        margin-left: 15%;
+    }
+    to {
+        margin-left: 55%;
+    }
+}
+
+.rain {
+    color: hsl(221, 39%, 51%)
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    height: 50%;
+    font-size: 24px;
+    /* border: 1px solid white; */
+    /* margin: 50px 50px 0px 0px; */
+}
+
+.info-card-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-left {
+    width: 70%;
+    height: 100%;
+}
+
+.info-right {
     width: 40%;
-    height: 75%;
-    background-color: aliceblue;
-    margin: 40px 12.5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fa-map-pin {
+    color: rgb(188, 57, 57);
+}
+
+.fa-wind {
+    color: lightskyblue;
+}
+
+.fa-compass {
+    color: rgb(150, 152, 136);
+}
+
+.fa-people-group {
+    color: rgb(104, 176, 178);
+}
+
+.fa-globe {
+    color: green;
 }

@@ -7,11 +7,11 @@ import { RootObject } from '../models/weather.model';
 @Injectable({
   providedIn: 'root'
 })
-export class ServicesService {
+export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  getWeather(city: string): Observable<RootObject> {
+  getWeather(city: any): Observable<RootObject> {
     return this.http.get<RootObject>(environment.baseUrl, {
       params: new HttpParams()
         .set('q', city)
